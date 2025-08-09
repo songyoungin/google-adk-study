@@ -3,14 +3,14 @@ from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
 
 
-def get_weather(city: str) -> dict:
-    """Retrieves the current weather report for a specified city.
+def get_weather(city: str) -> dict[str, str]:
+    """입력으로 들어온 도시에 대해서 날씨 정보를 반환하는 함수
 
     Args:
-        city (str): The name of the city for which to retrieve the weather report.
+        city (str): 날씨 정보를 조회할 도시 이름 ("new york"만 지원) (예: "new york")
 
     Returns:
-        dict: status and result or error msg.
+        dict[str, str]: 상태와 결과 또는 에러 메시지
     """
     if city.lower() == "new york":
         return {
@@ -27,14 +27,14 @@ def get_weather(city: str) -> dict:
         }
 
 
-def get_current_time(city: str) -> dict:
-    """Returns the current time in a specified city.
+def get_current_time(city: str) -> dict[str, str]:
+    """입력으로 들어온 도시에 대해서 현재 시간을 반환하는 함수
 
     Args:
-        city (str): The name of the city for which to retrieve the current time.
+        city (str): 현재 시간을 조회할 도시 이름 ("new york"만 지원) (예: "new york")
 
     Returns:
-        dict: status and result or error msg.
+        dict[str, str]: 상태와 결과 또는 에러 메시지
     """
 
     if city.lower() == "new york":
